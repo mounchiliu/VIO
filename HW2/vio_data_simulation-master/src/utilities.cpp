@@ -28,12 +28,12 @@ void save_features(std::string filename,
     for (int i = 0; i < points.size(); ++i) {
         Eigen::Vector4d p = points[i];
         Eigen::Vector2d f = features[i];
-        save_points<<p(0)<<" "
+        save_points<<p(0)<<" "//4x1 vector for position
                    <<p(1)<<" "
                    <<p(2)<<" "
                    <<p(3)<<" "
-                   <<f(0)<<" "
-                   <<f(1)<<" "
+                   <<f(0)<<" "//u
+                   <<f(1)<<" "//v
                    <<std::endl;
     }
 }
