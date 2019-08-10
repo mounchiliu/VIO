@@ -71,7 +71,7 @@ CreatePointsLines(std::vector<Eigen::Vector4d, Eigen::aligned_allocator<Eigen::V
         points.push_back(p);
     }
 
-    // save points
+    // save points //3D points
     std::stringstream filename;
     filename<<"all_points.txt";
     save_points(filename.str(),points);
@@ -215,7 +215,7 @@ int main(){
             }
         }
 
-        // save points
+        // save lines
         std::stringstream filename1;
         filename1<<"keyframe/all_lines_"<<n<<".txt";
         save_lines(filename1.str(),features_cam);
