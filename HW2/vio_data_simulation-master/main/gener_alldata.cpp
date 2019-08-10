@@ -154,8 +154,17 @@ int main(){
     }
     save_Pose("cam_pose.txt",camdata);
     save_Pose_asTUM("cam_pose_tum.txt",camdata);
-
+    
+    
     // points obs in image
+    //Added for HW 7
+    //time step for cameras
+    std::stringstream filename2;
+    filename2<<"keyframe/CamTimeStep.txt";
+    std::ofstream save_timestep;
+    save_timestep.open(filename2.str());
+    //-------------------------------------
+
     for(int n = 0; n < camdata.size(); ++n)
     {
         MotionData data = camdata[n];
@@ -186,6 +195,11 @@ int main(){
         std::stringstream filename1;
         filename1<<"keyframe/all_points_"<<n<<".txt";
         save_features(filename1.str(),points_cam,features_cam);
+
+        // Added for HW7
+        // save timestep
+        save_timestep<<camdata[n].timestamp<<std::endl;
+
     }
 
     // lines obs in image
