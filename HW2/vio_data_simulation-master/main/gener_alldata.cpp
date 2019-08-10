@@ -156,6 +156,7 @@ int main(){
     save_Pose_asTUM("cam_pose_tum.txt",camdata);
     
     
+
     // points obs in image
     //Added for HW 7
     //time step for cameras
@@ -198,9 +199,10 @@ int main(){
 
         // Added for HW7
         // save timestep
-        save_timestep<<camdata[n].timestamp<<std::endl;
+        save_timestep<<camdata[n].timestamp<<" "<<filename1.str()<<std::endl;
 
     }
+    
 
     // lines obs in image
     for(int n = 0; n < camdata.size(); ++n)
